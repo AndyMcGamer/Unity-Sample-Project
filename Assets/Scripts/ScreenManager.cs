@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScreenManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private Animator pauseAnimator;
 
     private bool isPaused = false;
 
@@ -22,6 +23,7 @@ public class ScreenManager : MonoBehaviour
             if (isPaused)
             {
                 Time.timeScale = 0f;
+                pauseAnimator.SetTrigger("FadeIn");
             }
             else
             {
